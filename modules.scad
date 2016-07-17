@@ -8,7 +8,7 @@ module cradle(length,heigth) {
         
         translate([-1,0,0])
         rotate([0,90,0])
-        cylinder(length+2,tube_od/2,tube_od/2);
+        cylinder(length+2,tube_od/2,tube_od/2, $fn=100);
     }
 }
 
@@ -38,16 +38,16 @@ module plate(length,width,thickness) {
 module mounting_holes(length,width,thickness) {
     screw_length=thickness+tube_od+2;
     translate([length/4,tube_od/2,-screw_length/2])
-    cylinder(screw_length,screw_od/2,screw_od/2);
+    cylinder(screw_length,screw_od/2,screw_od/2, $fn=100);
     
     translate([3*length/4,tube_od/2,-screw_length/2])
-    cylinder(screw_length,screw_od/2,screw_od/2);
+    cylinder(screw_length,screw_od/2,screw_od/2, $fn=100);
     
     translate([length/4,width-tube_od/2,-screw_length/2])
-    cylinder(screw_length,screw_od/2,screw_od/2);
+    cylinder(screw_length,screw_od/2,screw_od/2, $fn=100);
     
     translate([3*length/4,width-tube_od/2,-screw_length/2])
-    cylinder(screw_length,screw_od/2,screw_od/2);
+    cylinder(screw_length,screw_od/2,screw_od/2, $fn=100);
 }
 
 module cradle_contra(length,height) {
@@ -56,7 +56,7 @@ module cradle_contra(length,height) {
         cube([length,tube_od,height]);
 
         rotate([0,90,0])
-        cylinder(length,tube_id/2,tube_id/2);
+        cylinder(length,tube_id/2,tube_id/2, $fn=100);
     }
 }
 
@@ -85,7 +85,7 @@ module outer_plate(with_plate,with_contra) {
         base_plate(plate_length,plate_width,with_plate,with_contra);
         
         translate([-plate_width/8,plate_width/2,-10])
-        cylinder(60,plate_width/3,plate_width/3);
+        cylinder(60,plate_width/3,plate_width/3, $fn=100);
     }
 }
 
@@ -95,9 +95,9 @@ module inner_plate(with_plate,with_contra) {
         base_plate(length,plate_width,with_plate,with_contra);
         
         translate([-plate_width/8,plate_width/2,-10])
-        cylinder(60,plate_width/3,plate_width/3);
+        cylinder(60,plate_width/3,plate_width/3, $fn=100);
 
         translate([length+plate_width/8,plate_width/2,-10])
-        cylinder(60,plate_width/3,plate_width/3);
+        cylinder(60,plate_width/3,plate_width/3, $fn=100);
     }
 }
